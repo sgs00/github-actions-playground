@@ -1,0 +1,14 @@
+version: '3'
+services:
+
+  webserver:
+    image: sgs00/github-actions-playground
+    restart: unless-stopped
+    ports:
+      - "9090:80"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
